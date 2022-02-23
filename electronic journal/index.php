@@ -11,7 +11,7 @@
 <body>
     <?php
     error_reporting(E_ERROR | E_PARSE);
-    if($_COOKIE['log'] == ''):
+    if ($_COOKIE['log'] == '') :
     ?>
     <div class="registration">
         <h1>
@@ -25,7 +25,7 @@
             </button>
         </form>
     </div>
-    <?php else: 
+    <?php else :
         header('Location: main.html');
     ?>
     <?php endif; ?>
