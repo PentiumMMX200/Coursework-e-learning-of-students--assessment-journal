@@ -20,11 +20,12 @@
     ?>
     <br>
     <?php
-    foreach ($groups as $group)
+    foreach ($groups as $group) {
         echo $group['course'] . " ";
-    echo $group['classLead'] . " ";
-    echo $group['groups'] . " ";
-    echo $group['profession'] . "<br>";
+        echo $group['classLead'] . " ";
+        echo $group['groups'] . " ";
+        echo $group['profession'] . "<br>";
+    }
     ?>
 </body>
 

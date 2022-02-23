@@ -26,7 +26,7 @@
         </form>
     </div>
     <?php else :
-        header('Location: main.html');
+        header('Location: main.php');
     ?>
     <?php endif; ?>
 </body>
