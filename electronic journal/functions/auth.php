@@ -1,5 +1,5 @@
 <?php
-include 'DBCon.php';
+include '../includes/DBCon.php';
 
 $login = filter_var(trim($_POST['login']), FILTER_SANITIZE_STRING);
 $passwd = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
@@ -20,4 +20,4 @@ if ($user == 0) {
 $cookie = hash('ripemd160', $user['name'] . 'dfg324');
 setcookie('log', $cookie, time() + 60 * 60 * 24 * 365, "/");
 
-header('Location: main.php');
+header('Location: ../main.php');

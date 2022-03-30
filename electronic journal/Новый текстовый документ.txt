@@ -1,3 +1,19 @@
 Admin 4bceb964f4a13e1e880ac5eeed65abe964384c7c (Hydrogen13)
 Testuser 5b939963f753cb65867135925c3c9f919c68783f (Testpasswd)
 User 5f00892a8cf9334a790898a487df8788fab10979 (Streetooha)
+
+
+
+
+
+$action2 = $_GET['M_mark'];
+
+$update = $db->prepare("UPDATE `marks` SET `M_mark` = :ocenka WHERE `M_id` = :id");
+$update->execute(array("ocenka" => $action2, "id" => "24"));
+$update = $update->fetchAll(PDO::FETCH_DEFAULT);
+
+                        <form action='./markupdate.php'>
+                            
+                        <button type="submit" name="M_id"
+                                value="<?= $mark['M_id']; ?>"><?= $mark['M_Attendance']; ?><?= $mark['M_Mark']; ?></button>
+                        </form>

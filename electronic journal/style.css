@@ -1,4 +1,5 @@
 .wrapper {
+    min-height: 100%;
     position: relative;
     overflow-x: hidden;
 }
@@ -39,22 +40,138 @@
 .menu-btn {
     width: 30px;
     height: 30px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
     background-color: #191970;
     position: absolute;
     right: -35px;
     top: 10px;
 }
 
-/*
-.sidebar{
-    z-index:99;
+.menu-btn-item {
+    text-align: center;
+    display: block;
+    width: 24px;
+    height: 3px;
+    margin-bottom: 3px;
+    border-radius: 2px;
+    background: #fff;
+    transition: all .3s ease;
 }
-.content{
+
+.sidebar-active .menu-btn-item {
+    margin-bottom: -3px;
+}
+
+.sidebar-active .menu-btn-item:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.sidebar-active .menu-btn-item:nth-child(2) {
+    opacity: 0;
+}
+
+.sidebar-active .menu-btn-item:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+
+.tabContent {
+    padding: 50px 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tabsBtn {
+    flex: 0 1 33.333%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: rebeccapurple;
+    text-decoration: none;
+
+}
+
+.tabsBtn-active {
+    background-color: bisque;
+}
+
+.navTabs {
+    margin: 0px 0px 50px 0px;
+}
+
+.tabsitems {
+    display: flex;
+}
+
+.tabs {
+    display: none;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 24px;
+    background-color: bisque;
+}
+
+.tabs:first-child {
+    display: block;
+}
+
+.sidebar {
+    z-index: 99;
+}
+
+.content {
     transition: 0.5s;
     position: relative;
-    z-index:0;
+    z-index: 0;
 }
-content-active{
+
+.content-active {
     transform: translateX(20%);
 }
-*/
+
+.journalMain {
+    padding: 50px 0;
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.wrapperocenki {
+    grid-template-columns: 100%;
+    grid-auto-rows: auto;
+    display: grid;
+}
+
+.row {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100px;
+    grid-auto-columns: 40px;
+}
+
+.row>* {
+    grid-row: 1/2;
+}
+
+.familiya {
+    grid-column: 1/2;
+}
+
+.poseshenieOcenki {
+    text-align: center;
+    cursor: pointer;
+}
+
+.dateRow {
+
+    text-align: center;
+}
+
+.selectFormGroup-disable {
+    display: none;
+}

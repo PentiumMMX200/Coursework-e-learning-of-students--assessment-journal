@@ -1,32 +1,9 @@
-<? include 'DBCon.php'; ?>
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <?php
-    include 'header.php';
-    ?>
-</head>
-
-<body>
-    <?php
-    include 'sidebar.php';
-    ?>
-
-    <?php
-    $groups = Table("groups");
-    ?>
-    <br>
-    <?php
-    foreach ($groups as $group) {
-        echo $group['course'] . " ";
-        echo $group['classLead'] . " ";
-        echo $group['groups'] . " ";
-        echo $group['profession'] . "<br>";
-    }
-    ?>
-
-    <script src="/script.js"></script>
-</body>
-
-</html>
+<?php include './includes/DBCon.php'; ?>
+<?php include './includes/header.php'; ?>
+<div class="wrapper">
+    <?php include './functions/visible/sidebar.php'; ?>
+    <div class="content">
+        <?php include './functions/visible/tabs.php'; ?>
+    </div>
+</div>
+<?php include './includes/footer.php'; ?>
