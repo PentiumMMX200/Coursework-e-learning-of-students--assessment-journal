@@ -47,16 +47,24 @@ include '../functions/visible/sidebar.php';
                         <?php endforeach ?>
                     </select>
 
-                    <?php foreach ($groupsSelect as $subject => $groups) : ?>
-                    <select class='selectFormGroup' name='<?php echo $subject; ?>'>
-                        <?php foreach ($groups as $group) : ?>
-                        <option value="<?php echo $group; ?>">
-                            <?php echo $group; ?>
-                        </option>
-                        <?php endforeach ?>
-                    </select>
-                    <?php endforeach ?>
-                    <input type="submit" value="Выбрать предмет">
+                    <?php
+                    $counter = 0;
+                    foreach ($groupsSelect as $subject => $groups) :
+                        if ($counter == 0) { ?>
+                    <select class='selectFormGroup ' name='<?php echo $subject; ?>'>
+                        <?php } else { ?>
+                        <select class='selectFormGroup selectFormGroup-disable ' name='<?php echo $subject; ?>'>
+                            <?php }
+                            foreach ($groups as $group) : ?>
+                            <option value="<?php echo $group; ?>">
+                                <?php echo $group; ?>
+                            </option>
+                            <?php endforeach ?>
+                        </select>
+                        <?php
+                            $counter++;
+                        endforeach ?>
+                        <input type="submit" value="Выбрать предмет">
                 </form>
                 <br>
             </div>
@@ -88,7 +96,7 @@ include '../functions/visible/sidebar.php';
                 <?php
                 foreach ($students as $student) {
                 ?>
-                <div class='row'>
+                <div class='row rowFP'>
                     <div class='familiya'>
                         <?=
                             $student['S_Surname'];
@@ -96,7 +104,9 @@ include '../functions/visible/sidebar.php';
                     </div>
                     <?php foreach ($marks as $mark) {
                             if ($student['S_id'] == $mark['S_id']) { ?>
-                    <div class='poseshenieOcenki' data-date='<?= $mark['M_Date']; ?>' onclick="editForm()">
+                    <div></div>
+                    <div class='poseshenieOcenki' data-date='<?= $mark['M_Date']; ?>' data-id="<?= $mark['M_id']; ?>"
+                        data-mark="<?= $mark['M_Mark'] ?>">
                         <?= $mark['M_Attendance']; ?><?= $mark['M_Mark']; ?>
                     </div>
                     <?php }
@@ -104,11 +114,51 @@ include '../functions/visible/sidebar.php';
                 </div>
                 <?php } ?>
             </div>
-            <from action="./markupdate.php">
-
-            </from>
+            <form action="./markupdate.php" class='editForm'>
+                <input class="hiddenIdInput editFormRows" name='M_id' type="hidden">
+                <input class="markInput" name="Markinput" type="hidden">
+                <select class="markUpdateSelector editFormRows" name="markEditAction">
+                    <option class="markUpdateOption" value="Edit">Изменить</option>
+                    <option class="markUpdateOption" value="Delete">Удалить</option>
+                </select>
+                <div class="editingMarkDispaly">
+                    <select class="markChange editFormRows" name="M_Mark">
+                        <option class="MarkChoose" name="markValue" value="2">2</option>
+                        <option class="MarkChoose" name="markValue" value="3">3</option>
+                        <option class="MarkChoose" name="markValue" value="4">4</option>
+                        <option class="MarkChoose" name="markValue" value="5">5</option>
+                    </select>
+                    <button class="confirmButton" type='submit'>Сохранить</button>
+                </div>
+            </form>
+            <button class="createFormnBtn" title='Редактировать' type=''>&#9998;</button>
+            <div class="createForm">
+                <form action="./markupdate.php" class="createMarkForm">
+                    <input name='markCreate' value="Create" hidden>
+                    </select>
+                    <select class="setSurname" name="S_id">
+                        <?php
+                        foreach ($students as $student) :
+                        ?>
+                        <option value="<?php echo $student['S_id'] ?>"><?php echo $student['S_Surname'] ?></option>
+                        <?php endforeach ?>
+                    </select>
+                    <select class="markСreate" name="M_Mark">
+                        <option class="MarkChoose" name="markValue" value="2">2</option>
+                        <option class="MarkChoose" name="markValue" value="3">3</option>
+                        <option class="MarkChoose" name="markValue" value="4">4</option>
+                        <option class="MarkChoose" name="markValue" value="5">5</option>
+                    </select>
+                    <input class="subjectInput" name="M_study_subs" type="hidden">
+                    <input class="groupInput" name="G_group" type="hidden">
+                    <input class="createDate" type="date" name="M_Date">
+                    <button type="submit">Внести изменения</button>
+                </form>
+            </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 <script src="/journal.js"></script>
 <?php

@@ -17,3 +17,20 @@ $update = $update->fetchAll(PDO::FETCH_DEFAULT);
                         <button type="submit" name="M_id"
                                 value="<?= $mark['M_id']; ?>"><?= $mark['M_Attendance']; ?><?= $mark['M_Mark']; ?></button>
                         </form>
+
+
+
+
+const row = document.querySelectorAll('.rowFP');
+
+function freePlace() {
+
+    const row = document.querySelector('.rowFP');
+    let freePlace = document.createElement('div');
+    freePlace.style.textAlign = "center";
+    const testText = document.createTextNode('1');
+    freePlace.appendChild(testText);
+    row.appendChild(freePlace);
+}
+
+//row.forEach(freePlace);

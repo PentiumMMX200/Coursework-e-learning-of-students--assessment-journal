@@ -135,16 +135,25 @@
     transform: translateX(20%);
 }
 
+.journalMain{
+    grid-template-columns: 100%;
+    grid-auto-rows: auto;
+    display: grid;
+    margin-bottom: 10px;
+}
+
 .journalMain {
     padding: 50px 0;
     max-width: 75%;
     margin: 0 auto;
+
 }
 
 .wrapperocenki {
     grid-template-columns: 100%;
     grid-auto-rows: auto;
     display: grid;
+    margin: 0px 0px 20px;
 }
 
 .row {
@@ -171,7 +180,30 @@
 
     text-align: center;
 }
-
-.selectFormGroup-disable {
+.selectFormGroup-disable{
     display: none;
+}
+.editForm{
+    grid-template-columns: 10%;
+    grid-auto-rows: auto;
+    display: grid;
+    margin-bottom: 10px;
+}
+.editFormRows{
+    display: grid;
+    grid-template-rows:0 auto;
+}
+.confirmButton{
+    height: 20px;
+    text-align: center;
+}
+.createForm{
+    display: none;
+}
+.createForm-active{
+    display: block;
+}
+.createFormnBtn{
+    width: 30px;
+    margin-bottom: 10px;
 }

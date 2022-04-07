@@ -6,8 +6,7 @@
         </a>
         <nav class="menu-list">
             <a href="./functions/tablepage.php">Журнал</a>
-            <a href="#">Расписание</a>
-            <a href="../main.php">Мои предметы</a>
+            <a href="../main.php">Главная</a>
             <a href="./exit.php">Выйти</a>
         </nav>
     </div>

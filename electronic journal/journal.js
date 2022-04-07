@@ -15,7 +15,7 @@ function groupVisible(event) {
     });
 
 
-}
+};
 subjectSelector.addEventListener('change', groupVisible);
 
 
@@ -50,16 +50,51 @@ function htmlWrite(getDate, index) {
 
 function markSelectorColumn(mark) {
 
-    let markColumn = markDate.findIndex(date => date === mark.dataset.date);
 
+    let markColumn = markDate.findIndex(date => date === mark.dataset.date);
     mark.style.gridColumn = `${markColumn + 2}/${markColumn + 3}`;
+
 
 };
 
 marks.forEach(markSelectorColumn);
 
-const editFrom = document.querySelector('.editForm');
-function editForm() {
+const idInput = document.querySelector('.hiddenIdInput');
+const markInput = document.querySelector('.markInput');
+const markSelect = document.querySelector('.markChange');
 
+marks.forEach(mark => {
+    mark.addEventListener("click", editForm);
+});
+
+function editForm(change) {
+    idInput.value = change.currentTarget.dataset.id;
+    markInput.value = change.currentTarget.dataset.mark;
+    markSelect.value = change.currentTarget.dataset.mark;
+};
+
+const createFormBtn = document.querySelector(".createFormnBtn");
+const createForm = document.querySelector(".createForm");
+
+createFormBtn.onclick = function () {
+    createForm.classList.toggle("createForm-active");
 }
 
+
+const predm = document.querySelector('.selectFormSub');
+const subjectInput = document.querySelector('.subjectInput');
+
+predm.addEventListener('change', getSub);
+
+function getSub(change) {
+    subjectInput.value = change.currentTarget.value;
+}
+
+const group = document.querySelector('.selectFormGroup');
+const groupInput = document.querySelector('.groupInput');
+
+group.addEventListener('change', getGrp);
+
+function getGrp(change) {
+    groupInput.value = change.currentTarget.value;
+}
