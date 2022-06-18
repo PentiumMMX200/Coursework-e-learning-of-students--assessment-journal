@@ -207,3 +207,14 @@
     width: 30px;
     margin-bottom: 10px;
 }
+
+.rowFP > div{
+    border-color: black;
+    border: 1px solid;
+}
+
+@media print{
+    .selectorWrapper, .editForm, .createFormnBtn{
+        display: none !important;
+    }
+}

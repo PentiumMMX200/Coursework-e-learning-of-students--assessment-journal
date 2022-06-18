@@ -7,7 +7,7 @@
         <nav class="menu-list">
             <a href="./functions/tablepage.php">Журнал</a>
             <a href="../main.php">Главная</a>
-            <a href="./exit.php">Выйти</a>
+            <a href="./functions/exit.php">Выйти</a>
         </nav>
     </div>
     <script src="/sidebar.js" async></script>

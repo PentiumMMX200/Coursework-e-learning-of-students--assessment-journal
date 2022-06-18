@@ -39,6 +39,7 @@ include '../functions/visible/sidebar.php';
             <div class="selectorWrapper">
                 <form class='formSelectItems'>
                     <select class='selectFormSub' name='Ss_Subject_name'>
+                        <option disabled selected value>Выберите предмет</option>
                         <?php
                         foreach ($groupsSelect as $subject => $groups) : ?>
                         <option value="<?php echo $subject; ?>">
@@ -52,6 +53,7 @@ include '../functions/visible/sidebar.php';
                     foreach ($groupsSelect as $subject => $groups) :
                         if ($counter == 0) { ?>
                     <select class='selectFormGroup ' name='<?php echo $subject; ?>'>
+                        <option disabled selected value>Выберите группу</option>
                         <?php } else { ?>
                         <select class='selectFormGroup selectFormGroup-disable ' name='<?php echo $subject; ?>'>
                             <?php }
@@ -104,7 +106,6 @@ include '../functions/visible/sidebar.php';
                     </div>
                     <?php foreach ($marks as $mark) {
                             if ($student['S_id'] == $mark['S_id']) { ?>
-                    <div></div>
                     <div class='poseshenieOcenki' data-date='<?= $mark['M_Date']; ?>' data-id="<?= $mark['M_id']; ?>"
                         data-mark="<?= $mark['M_Mark'] ?>">
                         <?= $mark['M_Attendance']; ?><?= $mark['M_Mark']; ?>
@@ -118,16 +119,23 @@ include '../functions/visible/sidebar.php';
                 <input class="hiddenIdInput editFormRows" name='M_id' type="hidden">
                 <input class="markInput" name="Markinput" type="hidden">
                 <select class="markUpdateSelector editFormRows" name="markEditAction">
+                    <option disabled selected value>Выберите опцию</option>
                     <option class="markUpdateOption" value="Edit">Изменить</option>
                     <option class="markUpdateOption" value="Delete">Удалить</option>
                 </select>
                 <div class="editingMarkDispaly">
                     <select class="markChange editFormRows" name="M_Mark">
+                        <option disabled selected value>Оценка</option>
                         <option class="MarkChoose" name="markValue" value="2">2</option>
                         <option class="MarkChoose" name="markValue" value="3">3</option>
                         <option class="MarkChoose" name="markValue" value="4">4</option>
                         <option class="MarkChoose" name="markValue" value="5">5</option>
                     </select>
+                    <div class="attendanceCheck">
+                        <input type="checkbox" id="Attendance" class="markChange editFormRows" name="M_Attendance"
+                            value="ОТ">
+                        <label for="Attendance"> Отсутствовал?</label>
+                    </div>
                     <button class="confirmButton" type='submit'>Сохранить</button>
                 </div>
             </form>
@@ -137,6 +145,7 @@ include '../functions/visible/sidebar.php';
                     <input name='markCreate' value="Create" hidden>
                     </select>
                     <select class="setSurname" name="S_id">
+                        <option disabled selected value>Выберите Фамилию</option>
                         <?php
                         foreach ($students as $student) :
                         ?>
@@ -144,6 +153,7 @@ include '../functions/visible/sidebar.php';
                         <?php endforeach ?>
                     </select>
                     <select class="markСreate" name="M_Mark">
+                        <option disabled selected value>Оценка</option>
                         <option class="MarkChoose" name="markValue" value="2">2</option>
                         <option class="MarkChoose" name="markValue" value="3">3</option>
                         <option class="MarkChoose" name="markValue" value="4">4</option>

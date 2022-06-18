@@ -71,6 +71,7 @@ function editForm(change) {
     idInput.value = change.currentTarget.dataset.id;
     markInput.value = change.currentTarget.dataset.mark;
     markSelect.value = change.currentTarget.dataset.mark;
+
 };
 
 const createFormBtn = document.querySelector(".createFormnBtn");
