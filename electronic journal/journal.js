@@ -1,4 +1,3 @@
-
 const groupSelector = document.querySelectorAll('.selectFormGroup');
 const subjectSelector = document.querySelector('.selectFormSub');
 
@@ -73,6 +72,7 @@ function editForm(change) {
     markSelect.value = change.currentTarget.dataset.mark;
 
 };
+
 
 const createFormBtn = document.querySelector(".createFormnBtn");
 const createForm = document.querySelector(".createForm");

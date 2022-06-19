@@ -34,3 +34,27 @@ function freePlace() {
 }
 
 //row.forEach(freePlace);
+
+
+
+
+
+
+
+
+//---------
+
+const subButton = document.querySelector('.confirmButton');
+
+subButton.addEventListener("click", submitButton);
+
+function submitButton(event) {
+    event.preventDefault();
+    idInput.querySelector('dataset.id');
+
+
+    // markFin.innerHTML =
+
+};
+
+//----------

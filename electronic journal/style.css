@@ -208,6 +208,21 @@
     margin-bottom: 10px;
 }
 
+.S_createForm{
+    display: none;
+}
+.S_createForm-active{
+    display: block;
+}
+.S_deleteForm{
+    display: none;
+}
+.S_deleteForm-active{
+    display: block;
+}
+
+
+
 .rowFP > div{
     border-color: black;
     border: 1px solid;

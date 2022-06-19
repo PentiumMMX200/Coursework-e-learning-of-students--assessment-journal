@@ -42,9 +42,9 @@ include '../functions/visible/sidebar.php';
                         <option disabled selected value>Выберите предмет</option>
                         <?php
                         foreach ($groupsSelect as $subject => $groups) : ?>
-                        <option value="<?php echo $subject; ?>">
-                            <?php echo $subject; ?>
-                        </option>
+                            <option value="<?php echo $subject; ?>">
+                                <?php echo $subject; ?>
+                            </option>
                         <?php endforeach ?>
                     </select>
 
@@ -52,21 +52,21 @@ include '../functions/visible/sidebar.php';
                     $counter = 0;
                     foreach ($groupsSelect as $subject => $groups) :
                         if ($counter == 0) { ?>
-                    <select class='selectFormGroup ' name='<?php echo $subject; ?>'>
-                        <option disabled selected value>Выберите группу</option>
-                        <?php } else { ?>
-                        <select class='selectFormGroup selectFormGroup-disable ' name='<?php echo $subject; ?>'>
-                            <?php }
+                            <select class='selectFormGroup ' name='<?php echo $subject; ?>'>
+                                <option disabled selected value>Выберите группу</option>
+                            <?php } else { ?>
+                                <select class='selectFormGroup selectFormGroup-disable ' name='<?php echo $subject; ?>'>
+                                <?php }
                             foreach ($groups as $group) : ?>
-                            <option value="<?php echo $group; ?>">
-                                <?php echo $group; ?>
-                            </option>
-                            <?php endforeach ?>
-                        </select>
-                        <?php
+                                    <option value="<?php echo $group; ?>">
+                                        <?php echo $group; ?>
+                                    </option>
+                                <?php endforeach ?>
+                                </select>
+                            <?php
                             $counter++;
                         endforeach ?>
-                        <input type="submit" value="Выбрать предмет">
+                            <input type="submit" value="Выбрать предмет">
                 </form>
                 <br>
             </div>
@@ -98,21 +98,20 @@ include '../functions/visible/sidebar.php';
                 <?php
                 foreach ($students as $student) {
                 ?>
-                <div class='row rowFP'>
-                    <div class='familiya'>
-                        <?=
+                    <div class='row rowFP'>
+                        <div class='familiya'>
+                            <?=
                             $student['S_Surname'];
                             ?>
-                    </div>
-                    <?php foreach ($marks as $mark) {
+                        </div>
+                        <?php foreach ($marks as $mark) {
                             if ($student['S_id'] == $mark['S_id']) { ?>
-                    <div class='poseshenieOcenki' data-date='<?= $mark['M_Date']; ?>' data-id="<?= $mark['M_id']; ?>"
-                        data-mark="<?= $mark['M_Mark'] ?>">
-                        <?= $mark['M_Attendance']; ?><?= $mark['M_Mark']; ?>
-                    </div>
-                    <?php }
+                                <div class='poseshenieOcenki' data-date='<?= $mark['M_Date']; ?>' data-id="<?= $mark['M_id']; ?>" data-mark="<?= $mark['M_Mark'] ?>">
+                                    <?= $mark['M_Attendance']; ?><?= $mark['M_Mark']; ?>
+                                </div>
+                        <?php }
                         } ?>
-                </div>
+                    </div>
                 <?php } ?>
             </div>
             <form action="./markupdate.php" class='editForm'>
@@ -132,8 +131,7 @@ include '../functions/visible/sidebar.php';
                         <option class="MarkChoose" name="markValue" value="5">5</option>
                     </select>
                     <div class="attendanceCheck">
-                        <input type="checkbox" id="Attendance" class="markChange editFormRows" name="M_Attendance"
-                            value="ОТ">
+                        <input type="checkbox" id="Attendance" class="markChange editFormRows" name="M_Attendance" value="ОТ">
                         <label for="Attendance"> Отсутствовал?</label>
                     </div>
                     <button class="confirmButton" type='submit'>Сохранить</button>
@@ -149,7 +147,7 @@ include '../functions/visible/sidebar.php';
                         <?php
                         foreach ($students as $student) :
                         ?>
-                        <option value="<?php echo $student['S_id'] ?>"><?php echo $student['S_Surname'] ?></option>
+                            <option value="<?php echo $student['S_id'] ?>"><?php echo $student['S_Surname'] ?></option>
                         <?php endforeach ?>
                     </select>
                     <select class="markСreate" name="M_Mark">
